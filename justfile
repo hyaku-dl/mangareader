@@ -113,7 +113,6 @@ dev: dev_prompt
 
 # Generate documentation
 docs:
-    just test
     just menu "docs"
 
 # Get program's version

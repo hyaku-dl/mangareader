@@ -162,7 +162,7 @@ def main(rmv: Dict[Any, Any] = {}, hr=False):
             **rmv_mv.dir(f"local/{rip.stem}", {}),
         )
         for k, v in d.items():
-            md = md.replace(f"${{{k}}}", v)
+            md = md.replace(f"${{{k}}}", str(v))
 
         if title := rf.get("title"):
             if link := rf.get("link"):

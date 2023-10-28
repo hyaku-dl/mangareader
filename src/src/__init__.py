@@ -1,5 +1,5 @@
-__version__ = '0.0.0.0-alpha.0'
-hver = '0.0.1-alpha.0'
+__version__ = "0.0.0.0-alpha.0"
+hver = "0.0.1-alpha.0"
 vls = [0, 0, 0, 0, 0, 0]
 appimage = False
 cholder = """Copyright for portions of project <a target=_blank

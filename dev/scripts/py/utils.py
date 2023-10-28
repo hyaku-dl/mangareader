@@ -7,6 +7,7 @@ from typing import Any
 
 PR = ["alpha", "beta", "rc"]
 
+
 # Functions
 def inmd(p: str, ls: list[str] = None):
     """

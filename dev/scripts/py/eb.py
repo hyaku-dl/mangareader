@@ -1,6 +1,7 @@
+from typing import Any
+
 from .cfg import rcfg, wcfg
 from .utils import ivnd
-from typing import Any
 
 
 def merge_dict(dict1, dict2):

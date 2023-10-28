@@ -4,7 +4,7 @@
 
 ## **Description**
 
-Pre-release identifier bump. 
+Pre-release identifier bump.
 
 ## **<a href="#0-0-0-0-2-0-added" id="0-0-0-0-2-0-added">Added</a>**
 

@@ -3,7 +3,7 @@ docs:
   op: docs
 
 pdoc:
-  project: ura
+  project: src
   op: docs
   tpl: dev/constants/tpl/pdoc
 

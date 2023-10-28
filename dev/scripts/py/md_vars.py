@@ -41,6 +41,7 @@ USER = GLOBAL["user"]
 # Initialize
 copyright = []
 
+
 # Functions
 def b64(name: str):
     with open(f"./docs/assets/images/icons/{name}", "rb") as f:

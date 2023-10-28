@@ -1,18 +1,17 @@
-# **[ura](index.md).[src](src.md)**
+# **[src](index.md).[src](src.md)**
 
 ## **<a href="#super" id="super">Super-module</a>**
-- [ura](index.md)
 
+- [src](index.md)
 
 ## **<a href="#sub" id="sub">Sub-modules</a>**
 
-- [ura.src.base](src/base.md)
-- [ura.src.cd](src/cd.md)
-- [ura.src.cfg](src/cfg.md)
-- [ura.src.cli](src/cli.md)
-- [ura.src.download](src/download.md)
-- [ura.src.exceptions](src/exceptions.md)
-- [ura.src.globals](src/globals.md)
-- [ura.src.init](src/init.md)
-- [ura.src.style](src/style.md)
-- [ura.src.utils](src/utils.md)
+- [src.src.base](src/base.md)
+- [src.src.cd](src/cd.md)
+- [src.src.cfg](src/cfg.md)
+- [src.src.download](src/download.md)
+- [src.src.exceptions](src/exceptions.md)
+- [src.src.globals](src/globals.md)
+- [src.src.init](src/init.md)
+- [src.src.style](src/style.md)
+- [src.src.utils](src/utils.md)

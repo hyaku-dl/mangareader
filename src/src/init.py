@@ -13,7 +13,7 @@ except ImportError:
     from style import S, ct, pp
 
 if TW:
-    title = S.p1(S.t1("comic-dl/urasunday"))
+    title = S.p1(S.t1("hyaku-dl/mangareader"))
 
     tww = []
 
@@ -36,7 +36,7 @@ if TW:
     pp(
         ct.group(
             title,
-            S.t1("Your basic urasunday scraper."),
+            S.t1("A Basic Mangareader.to Chapter Downloader"),
             S.t1("\nConsider donating to the project: https://hyaku.download/donate\n"),
             S.t0("{}\n".format(random.choice(wcd["random"]))),
             *tww,

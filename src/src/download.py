@@ -7,8 +7,8 @@ import time
 from typing import Any, Dict, List
 
 import aiofiles
-from tqdm.asyncio import tqdm_asyncio
 from bs4 import BeautifulSoup
+from tqdm.asyncio import tqdm_asyncio
 
 try:
     from .base import class_usi, req, soup
@@ -146,16 +146,27 @@ class Downloader:
         manga_id = chapter_wrapper.get("data-manga-id")
         chapter_id = chapter_wrapper.get("data-reading-id")
 
-        resp = req.get(f'https://mangareader.to/ajax/image/list/chap/{chapter_id}?mode=vertical&quality=high&hozPageSize=1')
-        pages_html = req.get(f'https://mangareader.to/ajax/image/list/chap/{chapter_id}?mode=vertical&quality=high&hozPageSize=1').json()['html']
+        resp = req.get(
+            f"https://mangareader.to/ajax/image/list/chap/{chapter_id}?mode=vertical&quality=high&hozPageSize=1"
+        )
+        pages_html = req.get(
+            f"https://mangareader.to/ajax/image/list/chap/{chapter_id}?mode=vertical&quality=high&hozPageSize=1"
+        ).json()["html"]
         pages_soup = BeautifulSoup(pages_html, "lxml")
 
         title = sanitize_text(chapter_soup.select_one("h2.manga-name").text)
-        chapter = sanitize_text(BeautifulSoup(req.get(f'https://mangareader.to/ajax/manga/reading-list/{manga_id}?readingBy=chap').json()['html'], "lxml").select_one(f'li.chapter-item[data-id="{chapter_id}"]').text)
-
-        urls = [i.get('data-url') for i in pages_soup.select('.iv-card')]
-        asyncio.get_event_loop().run_until_complete(
-            self._dlch(title, chapter, urls)
+        chapter = sanitize_text(
+            BeautifulSoup(
+                req.get(
+                    f"https://mangareader.to/ajax/manga/reading-list/{manga_id}?readingBy=chap"
+                ).json()["html"],
+                "lxml",
+            )
+            .select_one(f'li.chapter-item[data-id="{chapter_id}"]')
+            .text
         )
+
+        urls = [i.get("data-url") for i in pages_soup.select(".iv-card")]
+        asyncio.get_event_loop().run_until_complete(self._dlch(title, chapter, urls))
 
         return self.jdir

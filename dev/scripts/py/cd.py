@@ -46,7 +46,6 @@ class CustomDict(dict):
         idx: int = 0,
         og_path: str = None,
     ) -> Any:
-
         og_path = ivnd(og_path, path)
 
         path_ls = path.split("/")

@@ -24,6 +24,7 @@ ALL_CHARS = (chr(i) for i in range(sys.maxunicode))
 CCHARS = "".join(map(chr, itertools.chain(range(0x00, 0x20), range(0x7F, 0xA0))))
 CCHARS_RE = re.compile("[%s]" % re.escape(CCHARS))
 
+
 # Functions
 def inmd(p: str, ls: list[str] = None) -> str:
     """ "If Not `path.isdir`, Make Directories"

@@ -1,4 +1,3 @@
-
 <h1 align="center" style="font-weight: bold">
     Changelog
 </h1>
@@ -8,8 +7,6 @@
 ## Added
 
 - `-on`/`--overwrite_not`, `-op`/`--overwrite_prompt`, and `-opn`/`--overwrite_prompt_not` flags for the `dl` subcommand.
-
-
 
 <h3 id="0-0-0-0-2-0-added">Added</h3>
 
@@ -35,8 +32,6 @@
 
 - Dynamic version and copyright information
 
-
-
 <h3 id="0-0-0-0-1-1-added">Added</h3>
 
 - Dynamic version and copyright information
@@ -52,8 +47,6 @@
 <h2 id="0-0-0-0-1-0">0.0.0.0-beta.0</h2>
 
 <b><font color="#ED5E5E">YANKED!</font></b>
-
-
 
 <h3 id="0-0-0-0-1-0-added">Added</h3>
 
@@ -75,8 +68,6 @@
 
 - Loading screen for app initialization
 
-
-
 <h3 id="0-0-0-0-0-5-added">Added</h3>
 
 - Loading screen for app initialization
@@ -89,8 +80,6 @@
 
 <b><font color="#ED5E5E">YANKED!</font></b>
 
-
-
 <h3 id="0-0-0-0-0-4-added">Added</h3>
 
 - Initialization of configuration file
@@ -99,8 +88,6 @@
 
 <b><font color="#ED5E5E">YANKED!</font></b>
 
-
-
 <h3 id="0-0-0-0-0-3-fixed">Fixed</h3>
 
 - `vls` string on `ura/__init__.py` to `[0, 0, 0, 0, 0, 3]`
@@ -108,8 +95,6 @@
 <h2 id="0-0-0-0-0-2">0.0.0.0-alpha.2</h2>
 
 <b><font color="#ED5E5E">YANKED!</font></b>
-
-
 
 <h3 id="0-0-0-0-0-2-fixed">Fixed</h3>
 

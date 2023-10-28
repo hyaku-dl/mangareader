@@ -1,12 +1,9 @@
-# **[ura](../index.md).[src](../src.md).[globals](globals.md)**
+# **[src](../index.md).[src](../src.md).[globals](globals.md)**
 
-    
-
-    
 <h2><b><a href="#var" id="var">Variables</a></b></h2>
 
-    
 `CFLOP`
+
 ```mermaid
 flowchart LR
     A([Config]) --> B[Grab CFLOP]
@@ -21,12 +18,8 @@ flowchart LR
                 H --> |false| G
 ```
 
-    
 <h2><b><a href="#func" id="func">Functions</a></b></h2>
 
-    
-
-    
 <h3><b><a href="#func-init" id="func-init">init</a></b></h3>
 
 ```python
