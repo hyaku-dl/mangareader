@@ -1,6 +1,6 @@
-__version__ = "0.0.0.0-alpha.1"
-hver = "0.0.1-alpha.1"
-vls = [0, 0, 0, 0, 0, 1]
+__version__ = "0.0.0.0-alpha.2"
+hver = "0.0.1-alpha.2"
+vls = [0, 0, 0, 0, 0, 2]
 appimage = False
 cholder = """Copyright for portions of project <a target=_blank
 href="https://github.com/hyaku-dl/mangareader">mangareader</a> is held by [whi_ne, Github account <a target=_blank
