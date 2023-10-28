@@ -1,0 +1,147 @@
+docs:
+  input: dev/raw_docs
+  op: docs
+
+pdoc:
+  project: ura
+  op: docs
+  tpl: dev/constants/tpl/pdoc
+
+mako:
+  gen:
+    path:
+      - changelog.mako
+      - latest-bump.mako
+      - latest-commit.mako
+      - latest-release-notes.mako
+    glob:
+      - docs/**/**/config.mako
+      - docs/**/**/index.mako
+
+md_vars:
+  global:
+    project_name: mrt
+    repo_name: mangareader
+    site: mrt.hyaku.download
+    organization: hyaku-dl
+    author: whi~nyaan!
+    user: whinee
+    year: 2022
+    codacy_id: 385ceb2d55424256a93f9ad6f8007f91
+    wakatime_id: c355e5b6-46c1-4616-be40-bffc807ffbb8
+    wakatime: dhtjprazfe
+    dc_acc: malice#0118
+    dc_uid: 848092597822160907
+    dc_inv: JbAtUxGcJZ
+    mail_acc: whinyaan@protonmail.com
+    mail_link: mailto:whinyaan@protonmail.com
+    desc: |-
+      A Basic Mangareader.to Chapter Downloader
+    long_desc: |-
+      A no-nonsense, simple and easy to use manga chapter downloader for mangareader.to
+    long_desc_md: |-
+      A no-nonsense, simple and easy to use scraper for <a target="_blank" href="https://mangareader.to">mangareader.to</a>
+
+  local:
+    README:
+      title: mangareader
+
+rules:
+  del: {}
+  repl:
+    'src="https://${site}/assets':
+      - 'src="./assets'
+    "src='https://${site}/assets":
+      - "src='./assets"
+    '](https://${site}/assets':
+      - '](./assets'
+
+requirements:
+  dev: dev/constants/req.txt
+  prod: requirements.txt
+
+development:
+  venv:
+    requirements:
+      - prod
+      - dev
+
+license:
+  year: 2022
+  type: MIT
+  cholder:
+    whi_ne:
+      user: whinee
+      projects:
+        hyaku-dl:
+          hyaku:
+            year: 2022
+            platform: Github
+        MangDL:
+          MangDL:
+            year: 2021-2022
+            platform: Github
+        Pirate-Kings:
+          YAMHL:
+            year: 2022
+            platform: Github
+        whinee:
+          snippets.py:
+            year: 2022
+            platform: Github
+
+build:
+  base:
+    directories:
+      output: dist
+      buildResources: build
+    appId: download.hyaku.mrt
+    productName: mangareader
+    copyright: Copyright © 2022 whinee
+    compression: store
+    artifactName: ${productName}.${ext}
+    asar: false
+  win:
+    win:
+      target:
+        - nsis
+      icon: docs\assets\images\icons\icon.png
+    nsis:
+      oneClick: false
+      perMachine: false
+      allowElevation: true
+      license: dev\site\license\index.html
+    files:
+      - filter:
+          - node_modules\**\*
+          - tmp\**\*
+  linux:
+    linux:
+      target:
+        - appimage
+      synopsis: A Basic Mangareader.to Chapter Downloader
+      description: A no-nonsense, simple and easy to use manga chapter downloader for mangareader.to
+      category: Graphics
+    icon: docs/assets/images/icons/icon.png
+    files:
+      - filter:
+          - node_modules/**/*
+          - tmp/**/*
+
+fetch:
+  project_name: mangareader
+  system: |-
+    PF_INFO="os host kernel uptime pkgs memory" PF_COL1=69 PF_COL2=70 PF_SEP=": " pfetch
+  project: |-
+    onefetch --no-palette --no-bots -d languages lines_of_code size --show-logo never -a emacs-lisp
+  types:
+    Project Source: |-
+      onefetch --no-palette --no-bots --show-logo never -e "*.ps1" "*.sh" dev/ docs/ -d git_info project head pending version created dependencies authors last_change contributors repo commits size license
+    Core: |-
+      onefetch --no-palette --no-bots --show-logo never -e "*.ps1" "*.sh" dev/ ura/gui/ -d git_info project head pending version created dependencies authors last_change contributors repo commits size license
+    GUI: |-
+      onefetch --no-palette --no-bots --show-logo never -e "*.ps1" "*.sh" dev/ ura/src/ -d git_info project head pending version created dependencies authors last_change contributors repo commits size license
+    Docs: |-
+      onefetch --no-palette --no-bots --show-logo never -e dev/constants/ dev/scripts/ dev/site ura/ "*.ps1" "*.sh" "*.xml" -T programming markup prose data -d git_info project head pending version created dependencies authors last_change contributors repo commits size license
+    Site: |-
+      onefetch --no-palette --no-bots --show-logo never -e dev/constants/ dev/raw_docs/ dev/scripts/ docs/ ura/ "*.ps1" "*.sh" "*.xml" -T programming markup prose data -d git_info project head pending version created dependencies authors last_change contributors repo commits size license

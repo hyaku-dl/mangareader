@@ -1,0 +1,12 @@
+{
+    "python.defaultInterpreterPath": "./pyenv/bin/python",
+    "python.languageServer": "Pylance",
+    "autoDocstring.customTemplatePath": "dev/constants/tpl/autodoc.mustache",
+    "vscode-yaml-sort.useCustomSortRecursively": true,
+    // "vscode-yaml-sort.customSortKeywords_1": [
+    //     "phrase",
+    //     "description",
+    //     "spec",
+    //     "link"
+    // ],
+}

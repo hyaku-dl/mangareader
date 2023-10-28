@@ -1,0 +1,116 @@
+<!-- markdownlint-disable MD024 MD025 -->
+
+<!--
+
+Added
+    For adding new features.
+    - user
+    - dev
+    - minor
+Changed
+    For changes in existing functionality.
+    - user
+    - dev
+Deprecated
+    For marking features as `deprecated`.
+    - patch
+Removed
+    For removing features.
+    - user
+    - dev
+Fixed
+    For any kind of fixes, formatting not included.
+Security
+    For any attempts to fix a security vulnerability.
+
+-->
+
+# 0 0 0 0 2 0
+
+## Added
+
+- `-on`/`--overwrite_not`, `-op`/`--overwrite_prompt`, and `-opn`/`--overwrite_prompt_not` flags for the `dl` subcommand.
+
+## Changed
+
+- Made the app log the `log path` even when loading, so that the user will know where to find the said file when it gets stuck while loading.
+- .AppImage so that you can run the cli by appending the `cli` subcommand to the command for running the said AppImage. For example, `./ura.AppImage cli [flags]`.
+
+## Fixed
+
+- `overwrite` settings not being followed (i.e. `overwrite` set to False, yet the chapter that is already downloaded is being overwritten).
+- Once and for all, the fucking python imports, for fuck's sake.
+- Improved documentation!
+
+# 0 0 0 0 1 1
+
+## Added
+
+- Dynamic version and copyright information
+
+## Changed
+
+- Improved logging
+
+## Fixed
+
+- Incorrect python library importing that causes the app to crash outright
+
+# 0 0 0 0 1 0
+
+<b><font color="#ED5E5E">YANKED!</font></b>
+
+## Added
+
+- Icon for .AppImage distribution of that app
+- Logging information to help debug the application
+- The app now reflects changes made on the configuration file on the app
+
+## Changed
+
+- Improved loading of the app, so that when the loading page is removed, the app is totally usable
+- Uses parts of private project (`whinee/snippets.py`) for the configuration of the app, and others
+
+# 0 0 0 0 0 5
+
+## Added
+
+- Loading screen for app initialization
+
+## Fixed
+
+- AppImages to be marked as AppImages (means that the config now goes on the config folder instead of the same directory as the AppImage)
+
+# 0 0 0 0 0 4
+
+<b><font color="#ED5E5E">YANKED!</font></b>
+
+## Added
+
+- Initialization of configuration file
+
+# 0 0 0 0 0 3
+
+<b><font color="#ED5E5E">YANKED!</font></b>
+
+## Fixed
+
+- `vls` string on `ura/__init__.py` to `[0, 0, 0, 0, 0, 3]`
+
+# 0 0 0 0 0 2
+
+<b><font color="#ED5E5E">YANKED!</font></b>
+
+## Fixed
+
+- Unquoted `__version__` string on `ura/__init__.py`
+
+# 0 0 0 0 0 1
+
+## Removed
+
+- Useless imports
+
+# 0 0 0 0 0 0
+
+<b><font color="#ED5E5E">YANKED!</font></b> Initial release of the application

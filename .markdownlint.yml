@@ -1,0 +1,7 @@
+MD004:
+   - asterisk
+   - dash
+MD007:
+  indent: 4
+MD013: false
+MD033: false

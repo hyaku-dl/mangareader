@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="apple-mobile-web-app-title" content="mangareader downloader" />
+    <meta name="twitter:title" content="mangareader downloader" />
+    <meta property="og:site_name" content="mangareader downloader" />
+    <meta property="og:title" content="mangareader downloader" />
+    <title>mangareader downloader</title>
+
+    <meta name="author" content="mangareader downloader">
+
+    <meta name="description" content="hyaku-dl/mangareader" />
+    <meta property="og:description" content="hyaku-dl/mangareader" />
+
+    <meta name="twitter:site:domain" content="mrt.hyaku.download" />
+    <meta name="twitter:url" content="https://mrt.hyaku.download" />
+    <meta property="og:url" content="https://mrt.hyaku.download" />
+    <link rel="canonical" href="https://mrt.hyaku.download" />
+
+    <meta property="og:type" content="website" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+</head>
+
+<body>
+    <div id="header">
+        <button id="stgBtn" class="icons"><img src="assets/images/settings.svg"
+                height="50" /></button>
+        <button id="infoBtn" class="icons"><img src="assets/images/info.svg"
+                height="50" /></button>
+    </div>
+    <div id="toast"></div>
+    <div class="cwrap">
+        <h1>hyaku-dl/mangareader</h1>
+        <p id="label">Enter a mangareader.to chapter URL that you want to download</p>
+        <div class="searchbar-box">
+            <input id="input" type="url"
+                placeholder="https://mangareader.to/read/{manga-slug}/{language-code}/{chapter-id}"
+                class="searchbar" pattern="https:\/\/mangareader\.to\/read\/.+\/.+\/.+">
+            <btn class="icon1" id="erase-input" style="visibility: hidden;">×</btn>
+        </div>
+        <button id="dl-btn" class="btn" style="opacity: 0;">Download</button>
+    </div>
+
+    <section id="modalArea" class="modalArea">
+        <div id="modalBg" class="modalBg"></div>
+        <div class="modalWrapper">
+            <div class="modalContents">
+                <div class="mw" id="stgModal">
+                    <h2>Settings</h2>
+                    <h3>Download</h3>
+                    <h4>Download Directory:</h4>
+                    <p id="ddir">Please wait...</p>
+                    <button id="cdir" class="btn smol">Change</button>
+                    <h4>Overwrite:</h4>
+                    <input type="checkbox" id="ow-tgl" /><label
+                        for="ow-tgl">Toggle</label>
+                </div>
+                <div class="mw" id="infoModal">
+                    <h2>Info</h2>
+                    <h3>Version</h3>
+                    <h4 id="version"></h4>
+                    <h3>Author</h3>
+                    <h4>whi_ne (whinyaan@protonmail.com)</h4>
+                    <a href=https://github.com/whinee target=_blank>Github</a>,
+                    <a href=https://twitter.com/whi_nyaan target=_blank>Twitter</a>
+                    <h3>Commissioned by</h3>
+                    <h4>Anonymous User
+                    </h4>
+                        Want something like this too? Inquire through Discord(<a
+                            target=_blank
+                            href=https://discord.com/users/848092597822160907>whinyaan</a>) or through
+                        e-mail (<a
+                        target=_blank
+                        href=mailto:whinyaan@protonmail.com>whinyaan@protonmail.com</a>). Price starts at 50 USD.
+                        For commissioning project, price starts at 30 USD.
+                    <h3>Copyright</h3>
+                    <h4 style="font-weight: bold"> <a
+                            href=https://choosealicense.com/licenses/mit/
+                            target=_blank>MIT LICENSE</a>
+                    </h4>
+                    <div id="cholder"></div>
+                    <h3>Debug</h3>
+                    <h4>Log Path:</h4>
+                    <p id="logPath">Please wait...</p>
+                </div>
+                <div id="closeModal" class="closeModal">
+                    ×
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="renderer.js"></script>
+</body>

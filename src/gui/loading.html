@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="apple-mobile-web-app-title" content="mangareader downloader" />
+    <meta name="twitter:title" content="mangareader downloader" />
+    <meta property="og:site_name" content="mangareader downloader" />
+    <meta property="og:title" content="mangareader downloader" />
+    <title>mangareader downloader</title>
+
+    <meta name="author" content="mangareader downloader">
+
+    <meta name="description" content="hyaku-dl/mangareader" />
+    <meta property="og:description" content="hyaku-dl/mangareader" />
+
+    <meta name="twitter:site:domain" content="mrt.hyaku.download" />
+    <meta name="twitter:url" content="https://mrt.hyaku.download" />
+    <meta property="og:url" content="https://mrt.hyaku.download" />
+    <link rel="canonical" href="https://mrt.hyaku.download" />
+
+    <meta property="og:type" content="website" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <style>
+        .spinner {
+            --spinner-size: 11;
+            --line-color: var(--fg-1);
+            --line-alpha: 1;
+            --ring-color: var(--bg-2);
+            --ring-alpha: 0.3;
+            --ring-size: 7;
+
+            font-size: calc(var(--spinner-size) * 1em);
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+        }
+
+        .spinner .line {
+            fill: none;
+            stroke: var(--line-color);
+            stroke-width: var(--ring-size);
+            opacity: var(--line-alpha);
+            stroke-linecap: round;
+            transform-origin: 50% 50%;
+            transform: rotate3d(0, 0, 1, 0deg);
+            animation:
+                2156ms spinner-arc ease-in-out infinite,
+                1829ms spinner-rotate linear infinite;
+        }
+
+        .spinner .ring {
+            fill: none;
+            stroke: var(--ring-color);
+            stroke-width: var(--ring-size);
+            opacity: var(--ring-alpha);
+        }
+
+        @keyframes spinner-rotate {
+            to {
+                transform: rotate3d(0, 0, 1, 360deg);
+            }
+        }
+
+        @keyframes spinner-arc {
+            from {
+                stroke-dasharray: 0 150;
+                stroke-dashoffset: 0;
+            }
+
+            to {
+                stroke-dasharray: 100 150;
+                stroke-dashoffset: -140;
+            }
+        }
+    </style>
+
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'self' 'sha256-bELQ8A6eRDkdoEdERBYPFlN2PcwwyVC5NWRKmOWfFMY='">
+
+    <script>
+        const { ipcRenderer } = require('electron')
+        require("socket.io-client").io("http://0.0.0.0:9173");
+        ipcRenderer.on('logPath', function (event, path) {
+            console.log(`Log Path:`, path);
+        });
+        ipcRenderer.send("logPath");
+    </script>
+
+</head>
+
+<body>
+    <div
+        style="position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+        <svg viewBox="0 0 50 50" class="spinner">
+            <circle class="ring" cx="25" cy="25" r="22.5" />
+            <circle class="line" cx="25" cy="25" r="22.5" />
+        </svg>
+    </div>
+</body>
