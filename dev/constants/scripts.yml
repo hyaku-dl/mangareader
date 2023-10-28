@@ -164,7 +164,7 @@ scripts:
                 ) &&
                 mkdir tmp/ &&
                 (
-                    cp -r ${project_name}/** tmp/ &
+                    cp -r src/** tmp/ &
                     wget -O ./tmp/python.AppImage "$(wget -qSO - "https://api.github.com/repos/niess/python-appimage/releases/tags/python${python_ver}" 2>/dev/null | grep -E "browser_download_url.*x86_64" | cut -d '"' -f4 | tail -1)" >/dev/null &
                     wget -O ./tmp/tool.AppImage https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage >/dev/null &
                     python -c "from dev.scripts.py.eb import main;main('linux','tmp/cfg.yml')" &
@@ -234,7 +234,7 @@ scripts:
                 yarn
 
                 New-Item -itemtype Directory -path 'tmp\python'
-                Copy-Item -Path '${project_name}\**' -Destination 'tmp\' -recurse -Force
+                Copy-Item -Path 'src\**' -Destination 'tmp\' -recurse -Force
                 Set-Location tmp\
                 Invoke-WebRequest 'https://bootstrap.pypa.io/get-pip.py' -o get-pip.py
                 Set-Location python

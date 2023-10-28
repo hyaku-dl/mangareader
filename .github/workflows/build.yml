@@ -28,8 +28,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 0.0.0.0-alpha.0
-          release_name: mrt release v0.0.0.0-alpha.0
+          tag_name: 0.0.0.0-alpha.1
+          release_name: mrt release v0.0.0.0-alpha.1
           body_path: .md
           draft: false
           prerelease: True
@@ -55,7 +55,7 @@ jobs:
           ) &&
           mkdir tmp/ &&
           (
-              cp -r mrt/** tmp/ &
+              cp -r src/** tmp/ &
               wget -O ./tmp/python.AppImage "$(wget -qSO - "https://api.github.com/repos/niess/python-appimage/releases/tags/python3.10" 2>/dev/null | grep -E "browser_download_url.*x86_64" | cut -d '"' -f4 | tail -1)" >/dev/null &
               wget -O ./tmp/tool.AppImage https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage >/dev/null &
               python -c "from dev.scripts.py.eb import main;main('linux','tmp/cfg.yml')" &
@@ -125,7 +125,7 @@ jobs:
           yarn
 
           New-Item -itemtype Directory -path 'tmp\python'
-          Copy-Item -Path 'mrt\**' -Destination 'tmp\' -recurse -Force
+          Copy-Item -Path 'src\**' -Destination 'tmp\' -recurse -Force
           Set-Location tmp\
           Invoke-WebRequest 'https://bootstrap.pypa.io/get-pip.py' -o get-pip.py
           Set-Location python
