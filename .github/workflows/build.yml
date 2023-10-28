@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Python3.10
+      - name: Python3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - name: Build markdown
         run: |-
           python "dev/scripts/py/rn_md.py"
@@ -28,8 +28,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 0.0.0.0-alpha.3
-          release_name: mrt release v0.0.0.0-alpha.3
+          tag_name: 0.0.0.0-alpha.4
+          release_name: mrt release v0.0.0.0-alpha.4
           body_path: .md
           draft: false
           prerelease: True
@@ -40,10 +40,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Python3.10
+      - name: Python3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - name: Build
         run: |-
           NODE_ENV=production &&
@@ -56,7 +56,7 @@ jobs:
           mkdir tmp/ &&
           (
               cp -r src/** tmp/ &
-              wget -O ./tmp/python.AppImage "$(wget -qSO - "https://api.github.com/repos/niess/python-appimage/releases/tags/python3.10" 2>/dev/null | grep -E "browser_download_url.*x86_64" | cut -d '"' -f4 | tail -1)" >/dev/null &
+              wget -O ./tmp/python.AppImage "$(wget -qSO - "https://api.github.com/repos/niess/python-appimage/releases/tags/python3.11" 2>/dev/null | grep -E "browser_download_url.*x86_64" | cut -d '"' -f4 | tail -1)" >/dev/null &
               wget -O ./tmp/tool.AppImage https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage >/dev/null &
               python -c "from dev.scripts.py.eb import main;main('linux','tmp/cfg.yml')" &
               wait
@@ -71,7 +71,7 @@ jobs:
           F='tmp/gui/main.js'
           with open(F,'r') as f:i=f.read()
           i=re.sub(r'const scriptPath.+',f'const scriptPath = path.join(__dirname, \\'../\\')',i)
-          with open(F,'w') as f:f.write(re.sub(r'const pythonPath.+',f'const pythonPath = path.join(__dirname, \\'../python/opt/python3.10/bin/python3.10\\')',i))" &
+          with open(F,'w') as f:f.write(re.sub(r'const pythonPath.+',f'const pythonPath = path.join(__dirname, \\'../python/opt/python3.11/bin/python3.11\\')',i))" &
               ./tmp/python/usr/bin/pip3 install --upgrade pip --no-warn-script-location --no-cache-dir --disable-pip-version-check &
               ./tmp/python/usr/bin/pip3 uninstall wheel -y --no-cache-dir --disable-pip-version-check &
               wait
@@ -104,10 +104,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-      - name: Python3.10
+      - name: Python3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - name: Build
         run: |-
           # Remove-Item dist\ -Recurse -Force
@@ -120,10 +120,10 @@ jobs:
           Set-Location tmp\
           Invoke-WebRequest 'https://bootstrap.pypa.io/get-pip.py' -o get-pip.py
           Set-Location python
-          Invoke-WebRequest 'https://www.python.org/ftp/python/3.10.0/python-3.10.0-embed-amd64.zip' -o python.zip
+          Invoke-WebRequest 'https://www.python.org/ftp/python/3.11.0/python-3.11.0-embed-amd64.zip' -o python.zip
           tar -xf python.zip
           Remove-Item python.zip
-          Remove-Item python310._pth
+          Remove-Item python311._pth
           Set-Location ..
           .\python\python get-pip.py
           Remove-Item get-pip.py
