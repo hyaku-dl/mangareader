@@ -1,7 +1,7 @@
 variables:
   global:
-    python_ver: '3.11'
-    python_ver_nd: '311'
+    python_ver: '3.10'
+    python_ver_nd: '310'
   local: {}
 
 matrix:
